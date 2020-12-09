@@ -1,5 +1,7 @@
-Sphinx<3.0
-sphinxcontrib-napoleon==0.7
-sphinx_rtd_theme==0.4.3
 ipykernel
+ipython
+Sphinx
+sphinx-rtd-theme
 nbsphinx
+m2r
+expectexception

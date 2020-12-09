@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 79
-target-version = ['py38']
+target-version = ['py38', 'py37']
 
 
 [tool.pytest.ini_options]
@@ -8,6 +8,7 @@ addopts = "-m 'not integration'"
 markers = [
     "ALL: All tests are marked with this marker",
     "integration: Integration tests",
+    "deprecated_api: Uses the old coordinate based Python API",
     ]
 testpaths = [
     "tests",

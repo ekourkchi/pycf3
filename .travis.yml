@@ -1,11 +1,10 @@
 language: python
 sudo: false
 
-addons:
-  apt_packages:
-    - pandoc
-    - texlive-full
-    - texlive-xetex
+before_install:
+  - sudo wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
+  - sudo dpkg -i pandoc-2.7.3-1-amd64.deb
+  - pandoc --version
 
 
 install:
@@ -16,21 +15,22 @@ script:
 
 matrix:
     include:
-      - python: 3.7
+      - python: 3.8
         env: TOXENV=style
         dist: xenial
         sudo: true
 
-      - python: 3.7
+      - python: 3.8
         env: TOXENV=coverage
         dist: xenial
         sudo: true
 
-      # - python: 3.7
-      #   env: TOXENV=docs
-      #   dist: xenial
-      #   sudo: true
-      - python: 3.7
+      - python: 3.8
+        env: TOXENV=make-docs
+        dist: xenial
+        sudo: true
+
+      - python: 3.8
         env: TOXENV=integration
         dist: xenial
         sudo: true
